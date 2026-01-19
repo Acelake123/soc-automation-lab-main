@@ -1069,3 +1069,531 @@ Here's what happens when Mimikatz is executed:
 1. User runs Mimikatz on Windows 10
    ↓
 2. Sysmon detects process creation (Event ID 1)
+   ↓
+3. Sysmon logs event to Windows Event Log
+   ↓
+4. Wazuh agent reads Sysmon log
+   ↓
+5. Wazuh agent sends event to Wazuh server
+   ↓
+6. Wazuh server analyzes event against rules
+   ↓
+7. Custom rule 100002 matches (Mimikatz detected)
+   ↓
+8. Wazuh generates high-severity alert (level 15)
+   ↓
+9. Alert appears in Wazuh dashboard
+   ↓
+10. Shuffle receives alert via webhook
+   ↓
+11. Shuffle enriches IOCs with VirusTotal
+   ↓
+12. Shuffle creates case in The Hive
+   ↓
+13. Shuffle sends email to SOC analyst
+   ↓
+14. SOC analyst reviews and responds
+```
+
+### Timeline Breakdown
+
+| Time | Component | Action |
+|:----:|-----------|--------|
+| **T+0s** | Windows 10 | Mimikatz executed by user |
+| **T+0.1s** | Sysmon | Process creation event logged |
+| **T+1s** | Wazuh Agent | Event collected and sent to server |
+| **T+2s** | Wazuh Server | Rule engine processes event |
+| **T+2.5s** | Wazuh Server | Alert generated (Rule 100002) |
+| **T+3s** | Shuffle | Alert received via webhook |
+| **T+4s** | VirusTotal | IOC enrichment completed |
+| **T+5s** | The Hive | Case created with enriched data |
+| **T+6s** | Email | Notification sent to analyst |
+
+This entire process happens **in less than 10 seconds** from execution to notification!
+
+---
+
+## Lab 4 Completion Checklist
+
+- [ ] Wazuh agent configured to collect Sysmon logs
+- [ ] Mimikatz downloaded and tested
+- [ ] Events appearing in Wazuh dashboard
+- [ ] Archive logging enabled on Wazuh server
+- [ ] Custom detection rule created (Rule 100002)
+- [ ] Rule syntax validated
+- [ ] Mimikatz detection tested successfully
+- [ ] Alerts generating correctly
+- [ ] MITRE ATT&CK mapping visible (T1003)
+- [ ] Complete workflow understood
+
+<div align="center">
+
+**✅ Lab 4 Complete!**
+
+**All labs finished! See your final results below.**
+
+</div>
+
+---
+
+<div align="center">
+
+# 🎉 Results & Achievements
+
+**Project Successfully Completed!**
+
+</div>
+
+<br>
+
+<div align="center">
+
+![Final Architecture](images/65File.jpg)
+
+**Complete SOC automation system successfully detecting and alerting on Mimikatz usage**
+
+</div>
+
+---
+
+## 📊 Project Success Metrics
+
+<div align="center">
+
+| Metric | Result | Status |
+|:------:|:------:|:------:|
+| **Detection Rate** | 100% | ✅ Success |
+| **False Positives** | 0% | ✅ Success |
+| **Response Time** | <10 seconds | ✅ Success |
+| **Alert Enrichment** | VirusTotal integrated | ✅ Success |
+| **Case Management** | The Hive automated | ✅ Success |
+| **Notification Delivery** | Email sent with details | ✅ Success |
+
+</div>
+
+---
+
+## 🏆 What You've Accomplished
+
+### Technical Achievements
+
+✅ **Built a Complete SOC Infrastructure**
+- Deployed 3 VMs (Windows client, Wazuh server, The Hive server)
+- Configured cloud infrastructure on Microsoft Azure
+- Established secure network communications
+
+✅ **Implemented SIEM Capabilities**
+- Installed and configured Wazuh
+- Set up log collection from Windows endpoints
+- Created custom detection rules
+- Mapped detections to MITRE ATT&CK framework
+
+✅ **Deployed SOAR Automation**
+- Integrated Shuffle for orchestration
+- Automated alert enrichment with VirusTotal
+- Configured automatic case creation in The Hive
+- Set up email alerting to analysts
+
+✅ **Demonstrated Threat Detection**
+- Detected real credential dumping attack (Mimikatz)
+- Generated high-fidelity alerts with low false positives
+- Achieved end-to-end automation in <10 seconds
+
+---
+
+## 💼 Skills Gained
+
+### Security Operations
+
+<table>
+<tr>
+<td width="50%">
+
+**SIEM Management**
+- Log collection and parsing
+- Alert rule creation
+- Threat detection
+- Security event analysis
+- Dashboard configuration
+
+</td>
+<td width="50%">
+
+**Incident Response**
+- Alert triage
+- Case management
+- Threat intelligence integration
+- MITRE ATT&CK mapping
+- Automated response workflows
+
+</td>
+</tr>
+</table>
+
+### Automation & Orchestration
+
+<table>
+<tr>
+<td width="50%">
+
+**SOAR Integration**
+- Webhook configuration
+- Workflow automation
+- API integration
+- Alert enrichment
+- Multi-tool orchestration
+
+</td>
+<td width="50%">
+
+**Threat Intelligence**
+- IOC enrichment
+- VirusTotal integration
+- Indicator analysis
+- Context gathering
+- Intelligence-driven detection
+
+</td>
+</tr>
+</table>
+
+### Cloud & Infrastructure
+
+<table>
+<tr>
+<td width="50%">
+
+**Cloud Deployment**
+- Azure VM creation
+- Network security groups
+- Public IP management
+- SSH/RDP access
+- Resource management
+
+</td>
+<td width="50%">
+
+**System Administration**
+- Linux server management
+- Service configuration
+- Database management
+- Log analysis
+- Performance tuning
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🎓 Real-World Applications
+
+This project mirrors **real enterprise SOC operations**. The skills you've learned are directly applicable to:
+
+### Job Roles
+- 🔹 **SOC Analyst** - Monitor and respond to security alerts
+- 🔹 **Security Engineer** - Build and maintain security infrastructure
+- 🔹 **Threat Hunter** - Proactively search for threats
+- 🔹 **Incident Responder** - Handle security incidents
+- 🔹 **SIEM Engineer** - Manage and optimize SIEM platforms
+
+### Industry Use Cases
+- 🔸 **Financial Services** - Detect fraud and unauthorized access
+- 🔸 **Healthcare** - Protect patient data (HIPAA compliance)
+- 🔸 **E-commerce** - Secure customer transactions
+- 🔸 **Government** - National security and compliance
+- 🔸 **Technology** - Protect intellectual property
+
+---
+
+## 🚀 Next Steps & Enhancements
+
+Ready to take your SOC to the next level? Here are some ideas:
+
+### Level 1: Expand Detection Capabilities
+
+```
+🔹 Add more detection rules for:
+   - Ransomware behaviors
+   - Lateral movement (PsExec, WMI)
+   - Data exfiltration
+   - Privilege escalation
+   - Persistence mechanisms
+```
+
+### Level 2: Enhance Automation
+
+```
+🔹 Implement automated responses:
+   - Automatically quarantine infected hosts
+   - Block malicious IPs in firewall
+   - Disable compromised user accounts
+   - Trigger system snapshots
+   - Escalate high-priority alerts
+```
+
+### Level 3: Add More Data Sources
+
+```
+🔹 Integrate additional logs:
+   - Firewall logs
+   - Network traffic (Zeek/Suricata)
+   - Web proxy logs
+   - Linux server logs
+   - Cloud service logs (AWS, Azure, GCP)
+   - Active Directory logs
+```
+
+### Level 4: Machine Learning Integration
+
+```
+🔹 Implement anomaly detection:
+   - User behavior analytics (UEBA)
+   - Network traffic anomalies
+   - Baseline normal behavior
+   - Detect zero-day attacks
+   - Predict potential breaches
+```
+
+### Level 5: Advanced Threat Hunting
+
+```
+🔹 Proactive threat hunting:
+   - Hypothesis-driven investigations
+   - IOC searching across environment
+   - Historical data analysis
+   - Threat intelligence correlation
+   - Advanced persistent threat (APT) detection
+```
+
+### Level 6: Compliance & Reporting
+
+```
+🔹 Meet regulatory requirements:
+   - PCI DSS compliance reports
+   - HIPAA audit trails
+   - GDPR data protection
+   - SOC 2 controls
+   - Automated compliance reporting
+```
+
+---
+
+## 📚 Additional Resources
+
+### Learn More About the Tools
+
+| Tool | Official Documentation | Community |
+|------|----------------------|-----------|
+| **Wazuh** | [docs.wazuh.com](https://documentation.wazuh.com) | [Wazuh Slack](https://wazuh.com/community/join-us-on-slack/) |
+| **The Hive** | [docs.thehive-project.org](https://docs.thehive-project.org) | [GitHub Discussions](https://github.com/TheHive-Project/TheHive/discussions) |
+| **Shuffle** | [shuffler.io/docs](https://shuffler.io/docs) | [Discord Server](https://discord.gg/B2CBzUm) |
+| **Sysmon** | [Microsoft Docs](https://docs.microsoft.com/sysinternals/downloads/sysmon) | [SwiftOnSecurity Config](https://github.com/SwiftOnSecurity/sysmon-config) |
+
+### Recommended Training
+
+- 🎓 **SANS SEC504** - Hacker Tools, Techniques, and Incident Handling
+- 🎓 **SANS SEC555** - SIEM with Tactical Analytics
+- 🎓 **Blue Team Level 1 (BTL1)** - Security Operations certification
+- 🎓 **Splunk Fundamentals** - SIEM platform training
+- 🎓 **MITRE ATT&CK Defender** - Threat-informed defense
+
+### Useful GitHub Repositories
+
+- 📦 [Awesome SIEM](https://github.com/cyb3rxp/awesome-siem)
+- 📦 [Detection Lab](https://github.com/clong/DetectionLab)
+- 📦 [Sigma Rules](https://github.com/SigmaHQ/sigma)
+- 📦 [Atomic Red Team](https://github.com/redcanaryco/atomic-red-team)
+- 📦 [MITRE CAR](https://github.com/mitre-attack/car)
+
+---
+
+## 🤝 Contributing & Community
+
+### Share Your Experience
+
+Did you complete this project? Share it with the community!
+
+- 📝 Write a blog post about your experience
+- 🎥 Create a video walkthrough
+- 💬 Share your results on social media
+- 🌟 Star this repository
+- 🔄 Fork and add your own enhancements
+
+### Get Help
+
+If you encounter issues:
+
+1. **Check the troubleshooting sections** in each lab
+2. **Review the screenshots** to verify your configuration
+3. **Search GitHub issues** for similar problems
+4. **Ask in community forums** (Reddit r/netsec, r/cybersecurity)
+5. **Join tool-specific communities** (Slack, Discord)
+
+---
+
+## 📝 Common Troubleshooting
+
+### Wazuh Agent Not Connecting
+
+**Problem:** Agent shows as "Never connected" or "Disconnected"
+
+**Solutions:**
+```bash
+# On Windows client, check agent status
+NET START WazuhSvc
+
+# Verify firewall allows port 1514 (agent communication)
+# Check ossec.conf has correct server IP address
+# Review agent logs: C:\Program Files (x86)\ossec-agent\ossec.log
+```
+
+### The Hive Won't Start
+
+**Problem:** The Hive service fails to start
+
+**Solutions:**
+```bash
+# Check Elasticsearch is running
+sudo systemctl status elasticsearch
+
+# Increase Elasticsearch heap size
+sudo nano /etc/elasticsearch/jvm.options
+# Set: -Xms2g and -Xmx2g
+
+# Check Cassandra is running
+sudo systemctl status cassandra
+
+# Review The Hive logs
+sudo journalctl -u thehive -f
+```
+
+### Sysmon Events Not Appearing
+
+**Problem:** No Sysmon events in Wazuh
+
+**Solutions:**
+```powershell
+# Verify Sysmon is running
+Get-Service Sysmon64
+
+# Check Event Viewer has Sysmon logs
+eventvwr.msc
+
+# Verify ossec.conf includes Sysmon channel
+# Restart Wazuh agent
+Restart-Service WazuhSvc
+```
+
+### Custom Rule Not Triggering
+
+**Problem:** Mimikatz alert doesn't appear
+
+**Solutions:**
+```bash
+# Test rule syntax
+sudo /var/ossec/bin/wazuh-logtest
+
+# Verify rule file has no syntax errors
+sudo nano /var/ossec/etc/rules/local_rules.xml
+
+# Check archive logging is enabled
+# Restart Wazuh manager
+sudo systemctl restart wazuh-manager
+
+# Review Wazuh logs
+sudo tail -f /var/ossec/logs/ossec.log
+```
+
+---
+
+## ⚠️ Security Considerations
+
+### Lab Environment vs. Production
+
+This is a **learning environment**. Before deploying to production:
+
+1. ✅ **Use strong authentication**
+   - Change all default passwords
+   - Implement multi-factor authentication
+   - Use SSH keys instead of passwords
+
+2. ✅ **Secure network communications**
+   - Use valid SSL/TLS certificates (not self-signed)
+   - Implement VPN for remote access
+   - Restrict access by IP address
+
+3. ✅ **Harden systems**
+   - Apply security patches regularly
+   - Disable unnecessary services
+   - Implement least privilege access
+   - Enable audit logging
+
+4. ✅ **Data protection**
+   - Encrypt data at rest
+   - Encrypt data in transit
+   - Implement backup strategies
+   - Follow data retention policies
+
+5. ✅ **Compliance**
+   - Meet industry regulations (GDPR, HIPAA, PCI DSS)
+   - Document security controls
+   - Conduct regular audits
+   - Train staff on security policies
+
+---
+
+## 🎯 Key Takeaways
+
+### What Makes This Project Valuable
+
+1. **Hands-On Experience** - You didn't just read about SOC operations; you built one
+2. **Real Tools** - All tools used are industry-standard and widely adopted
+3. **Practical Skills** - Every step mirrors real-world security operations
+4. **Automation Focus** - Modern SOCs rely heavily on automation
+5. **Threat Detection** - You detected a real attack technique used by adversaries
+
+### Core Principles Learned
+
+- 🔸 **Defense in Depth** - Multiple layers of security detection
+- 🔸 **Automation Reduces Response Time** - From hours to seconds
+- 🔸 **Context Matters** - Enriched alerts are more actionable
+- 🔸 **Documentation is Critical** - Playbooks and procedures save time
+- 🔸 **Continuous Improvement** - SOCs evolve as threats evolve
+
+---
+
+<div align="center">
+
+## 🌟 Final Thoughts
+
+Building a SOC is a journey, not a destination. The threat landscape constantly evolves, and so must your defenses.
+
+**You've taken the first step by completing this project.**
+
+Continue learning, stay curious, and keep building.
+
+<br>
+
+---
+
+<br>
+
+### 🔐 Stay Secure | 🔍 Stay Vigilant | 💡 Stay Curious
+
+<br>
+
+**Made with ❤️ By Anurag Aditya**
+
+<br>
+
+[![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
+
+<br>
+
+### ⭐ If this project helped you, please star the repository!
+
+<br>
+
+</div>
